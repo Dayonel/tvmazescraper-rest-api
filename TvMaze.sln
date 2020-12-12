@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze", "TvMaze\TvMaze.csproj", "{DF3A0EEC-B8EC-4FDF-8784-57855534DF6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze", "TvMaze\TvMaze.csproj", "{DF3A0EEC-B8EC-4FDF-8784-57855534DF6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Core", "TvMaze.Core\TvMaze.Core.csproj", "{0B4D696E-0909-4895-9AAA-DD5C370B3679}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2FC769E7-3098-45D2-ABBA-02C454A75FE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Infrastructure.Data", "Infrastructure\TvMaze.Infrastructure.Data\TvMaze.Infrastructure.Data.csproj", "{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Infrastructure.DependencyBuilder", "Infrastructure\TvMaze.Infrastructure.DependencyBuilder\TvMaze.Infrastructure.DependencyBuilder.csproj", "{65BCC110-0866-4532-85A0-D41965A1CDE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrator", "Migrator", "{27F048EA-02A8-4AFE-A796-D69E7FC1BC67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Migrator", "Migrator\TvMaze.Migrator\TvMaze.Migrator.csproj", "{F216CF0F-3878-4A09-8089-BDD090219725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +27,30 @@ Global
 		{DF3A0EEC-B8EC-4FDF-8784-57855534DF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF3A0EEC-B8EC-4FDF-8784-57855534DF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF3A0EEC-B8EC-4FDF-8784-57855534DF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4D696E-0909-4895-9AAA-DD5C370B3679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4D696E-0909-4895-9AAA-DD5C370B3679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4D696E-0909-4895-9AAA-DD5C370B3679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4D696E-0909-4895-9AAA-DD5C370B3679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65BCC110-0866-4532-85A0-D41965A1CDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65BCC110-0866-4532-85A0-D41965A1CDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65BCC110-0866-4532-85A0-D41965A1CDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65BCC110-0866-4532-85A0-D41965A1CDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F216CF0F-3878-4A09-8089-BDD090219725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F216CF0F-3878-4A09-8089-BDD090219725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F216CF0F-3878-4A09-8089-BDD090219725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F216CF0F-3878-4A09-8089-BDD090219725}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A6D31BC-77B1-4574-8B1F-F78DFD75DC2A} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
+		{65BCC110-0866-4532-85A0-D41965A1CDE4} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
+		{F216CF0F-3878-4A09-8089-BDD090219725} = {27F048EA-02A8-4AFE-A796-D69E7FC1BC67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C01A94B6-2828-4B46-BF85-605B7A4F4E7E}
