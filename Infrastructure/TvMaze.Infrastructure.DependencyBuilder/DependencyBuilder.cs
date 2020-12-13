@@ -30,6 +30,7 @@ namespace TvMaze.Infrastructure.DependencyBuilder
 
             #region Repositories
             services.AddTransient<IShowRepository<Show>, ShowRepository>();
+            services.AddTransient<ICastRepository<Cast>, CastRepository>();
             #endregion
 
             #region Hosted services
