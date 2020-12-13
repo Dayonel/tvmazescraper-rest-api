@@ -8,6 +8,7 @@
     <ProjectReference Include="..\..\TvMaze.Core\TvMaze.Core.csproj" />
     <ProjectReference Include="..\TvMaze.Infrastructure.Data\TvMaze.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\TvMaze.Infrastructure.HostedServices\TvMaze.Infrastructure.HostedServices.csproj" />
+    <ProjectReference Include="..\TvMaze.Infrastructure.Scraper\TvMaze.Infrastructure.Scraper.csproj" />
   </ItemGroup>
 
 </Project>
