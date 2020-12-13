@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    container_name: tvmaze
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    expose:
+      - 5000
+    ports:
+      - 80:5000
