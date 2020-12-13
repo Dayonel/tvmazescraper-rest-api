@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TvMaze.Core.Entity;
+using TvMaze.Infrastructure.Data.DbMapping;
 
 namespace TvMaze.Infrastructure.Data
 {
@@ -6,6 +8,13 @@ namespace TvMaze.Infrastructure.Data
     {
         public TvMazeDbContext(DbContextOptions options) : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder builder) { }
+        public DbSet<Show> Show { get; set; }
+        public DbSet<Cast> Cast { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder) 
+        {
+            builder.MapShows();
+            builder.MapCasts();
+        }
     }
 }

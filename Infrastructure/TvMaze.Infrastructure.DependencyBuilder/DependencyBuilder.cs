@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TvMaze.Infrastructure.Data;
+using TvMaze.Infrastructure.HostedServices;
 
 namespace TvMaze.Infrastructure.DependencyBuilder
 {
@@ -11,6 +12,10 @@ namespace TvMaze.Infrastructure.DependencyBuilder
         {
             #region DB
             services.AddDbContext<TvMazeDbContext>(options => options.UseSqlite(configuration.GetConnectionString(nameof(TvMazeDbContext))));
+            #endregion
+
+            #region Hosted services
+            services.AddHostedService<DbSeeder>();
             #endregion
         }
     }
