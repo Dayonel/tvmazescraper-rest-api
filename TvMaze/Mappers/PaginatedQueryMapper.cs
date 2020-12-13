@@ -9,11 +9,7 @@ namespace TvMaze.Mappers
         {
             return queryVM != null
                 ?
-                new PaginatedQueryDTO
-                {
-                    Page = queryVM.Page,
-                    PageSize = queryVM.PageSize
-                }
+                new PaginatedQueryDTO(queryVM.Page, queryVM.PageSize)
                 :
                 null;
         }
