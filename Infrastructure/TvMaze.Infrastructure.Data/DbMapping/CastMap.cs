@@ -13,6 +13,10 @@ namespace TvMaze.Infrastructure.Data.DbMapping
             // Key
             entity.HasKey(k => k.Id);
 
+            // Index
+            entity.HasIndex(i => new { i.ShowId, i.Name })
+                .IsUnique();
+
             // Relations
             entity.HasOne(p => p.Show)
                   .WithMany(o => o.Casts)

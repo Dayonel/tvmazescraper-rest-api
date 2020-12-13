@@ -9,7 +9,7 @@ using TvMaze.Infrastructure.Data;
 namespace TvMaze.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(TvMazeDbContext))]
-    [Migration("20201213141610_Version1")]
+    [Migration("20201213194226_Version1")]
     partial class Version1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace TvMaze.Infrastructure.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Birthday");
+                    b.Property<DateTime?>("Birthday");
 
                     b.Property<string>("Name")
                         .HasMaxLength(1024);
@@ -32,7 +32,8 @@ namespace TvMaze.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ShowId");
+                    b.HasIndex("ShowId", "Name")
+                        .IsUnique();
 
                     b.ToTable("Cast");
                 });
@@ -46,6 +47,9 @@ namespace TvMaze.Infrastructure.Data.Migrations
                         .HasMaxLength(1024);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Show");
                 });

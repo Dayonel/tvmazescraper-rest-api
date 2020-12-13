@@ -14,7 +14,7 @@ namespace TvMaze.Core.Mappers
                 {
                     Id = show.Id,
                     Name = show.Name,
-                    Cast = show.Casts.Select(s => s.Map()).ToList()
+                    Cast = show.Casts.OrderByDescending(d => d.Birthday).Select(s => s.Map()).ToList()
                 }
                 : 
                 null;
