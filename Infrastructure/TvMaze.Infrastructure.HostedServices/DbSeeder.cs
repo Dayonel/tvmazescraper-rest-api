@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using TvMaze.Core.Interfaces.ServiceClients;
 using TvMaze.Infrastructure.Data;
 
 namespace TvMaze.Infrastructure.HostedServices
@@ -11,14 +12,17 @@ namespace TvMaze.Infrastructure.HostedServices
     public class DbSeeder : BackgroundService
     {
         private readonly IServiceProvider _provider;
-        public DbSeeder(IServiceProvider provider)
+        private readonly IScraperServiceClient _scraperServiceClient;
+        public DbSeeder(IServiceProvider provider, IScraperServiceClient scraperServiceClient)
         {
             _provider = provider;
+            _scraperServiceClient = scraperServiceClient;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             await Migrate();
+            await Seed();
         }
 
         #region Migration
@@ -32,6 +36,13 @@ namespace TvMaze.Infrastructure.HostedServices
                     await _dbContext.Database.EnsureCreatedAsync();
                 }
             }
+        }
+        #endregion
+
+        #region Seed
+        private async Task Seed()
+        {
+            await _scraperServiceClient.ExecuteScraping();
         }
         #endregion
     }
