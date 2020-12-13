@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Migrator", "Migrator
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Infrastructure.HostedServices", "Infrastructure\TvMaze.Infrastructure.HostedServices\TvMaze.Infrastructure.HostedServices.csproj", "{2AC732E6-4CC5-4E93-9FAF-115A28AFDE97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Infrastructure.Scraper", "Infrastructure\TvMaze.Infrastructure.Scraper\TvMaze.Infrastructure.Scraper.csproj", "{ACE096AD-6649-48D0-B554-972F37A85E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Infrastructure.Scraper", "Infrastructure\TvMaze.Infrastructure.Scraper\TvMaze.Infrastructure.Scraper.csproj", "{ACE096AD-6649-48D0-B554-972F37A85E73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Infrastructure", "Infrastructure\TvMaze.Infrastructure\TvMaze.Infrastructure.csproj", "{0B041F03-7D6F-40AD-A263-209CE611894C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TvMaze.Infrastructure", "Infrastructure\TvMaze.Infrastructure\TvMaze.Infrastructure.csproj", "{0B041F03-7D6F-40AD-A263-209CE611894C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvMaze.Infrastructure.Scheduler", "Infrastructure\TvMaze.Infrastructure.Scheduler\TvMaze.Infrastructure.Scheduler.csproj", "{F13F29F1-134D-4252-A938-CCEF9A1A352E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{0B041F03-7D6F-40AD-A263-209CE611894C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B041F03-7D6F-40AD-A263-209CE611894C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B041F03-7D6F-40AD-A263-209CE611894C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13F29F1-134D-4252-A938-CCEF9A1A352E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13F29F1-134D-4252-A938-CCEF9A1A352E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13F29F1-134D-4252-A938-CCEF9A1A352E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13F29F1-134D-4252-A938-CCEF9A1A352E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{2AC732E6-4CC5-4E93-9FAF-115A28AFDE97} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
 		{ACE096AD-6649-48D0-B554-972F37A85E73} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
 		{0B041F03-7D6F-40AD-A263-209CE611894C} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
+		{F13F29F1-134D-4252-A938-CCEF9A1A352E} = {2FC769E7-3098-45D2-ABBA-02C454A75FE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C01A94B6-2828-4B46-BF85-605B7A4F4E7E}

@@ -13,6 +13,8 @@ using TvMaze.Infrastructure.Data;
 using TvMaze.Infrastructure.Data.Repository;
 using TvMaze.Infrastructure.HostedServices;
 using TvMaze.Infrastructure.Scraper;
+using TvMaze.Infrastructure.Scheduler.Extensions;
+using TvMaze.Infrastructure.Scheduler.Schedulers;
 
 namespace TvMaze.Infrastructure.DependencyBuilder
 {
@@ -25,6 +27,7 @@ namespace TvMaze.Infrastructure.DependencyBuilder
             services.AddSingleton(configuration.BindSettings<PaginationSettings>(nameof(PaginationSettings)));
             services.AddSingleton(configuration.BindSettings<ScraperSettings>(nameof(ScraperSettings)));
             services.AddSingleton(configuration.BindSettings<RateLimitSettings>(nameof(RateLimitSettings)));
+            services.AddSingleton(configuration.BindSettings<SchedulerSettings>(nameof(SchedulerSettings)));
             #endregion
 
             #region Http client
@@ -52,6 +55,10 @@ namespace TvMaze.Infrastructure.DependencyBuilder
 
             #region Hosted services
             services.AddHostedService<DbSeeder>();
+            #endregion
+
+            #region Schedulers
+            services.AddCronJob<ScrapingScheduler>(c => c.CronExpression = configuration.BindSettings<SchedulerSettings>(nameof(SchedulerSettings)).CronExpressionRecurrence);
             #endregion
         }
     }
