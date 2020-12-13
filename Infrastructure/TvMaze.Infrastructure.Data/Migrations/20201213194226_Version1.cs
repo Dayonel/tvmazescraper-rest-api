@@ -27,7 +27,7 @@ namespace TvMaze.Infrastructure.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(maxLength: 1024, nullable: true),
-                    Birthday = table.Column<DateTime>(nullable: false),
+                    Birthday = table.Column<DateTime>(nullable: true),
                     ShowId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -42,9 +42,16 @@ namespace TvMaze.Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cast_ShowId",
+                name: "IX_Cast_ShowId_Name",
                 table: "Cast",
-                column: "ShowId");
+                columns: new[] { "ShowId", "Name" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Show_Name",
+                table: "Show",
+                column: "Name",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

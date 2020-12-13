@@ -12,11 +12,9 @@ namespace TvMaze.Infrastructure.HostedServices
     public class DbSeeder : BackgroundService
     {
         private readonly IServiceProvider _provider;
-        private readonly IScraperServiceClient _scraperServiceClient;
-        public DbSeeder(IServiceProvider provider, IScraperServiceClient scraperServiceClient)
+        public DbSeeder(IServiceProvider provider)
         {
             _provider = provider;
-            _scraperServiceClient = scraperServiceClient;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -42,7 +40,11 @@ namespace TvMaze.Infrastructure.HostedServices
         #region Seed
         private async Task Seed()
         {
-            await _scraperServiceClient.ExecuteScraping();
+            using (var scope = _provider.CreateScope())
+            {
+                var scraperServiceClient = scope.ServiceProvider.GetRequiredService<IScraperServiceClient>();
+                await scraperServiceClient.ExecuteScraping();
+            }
         }
         #endregion
     }

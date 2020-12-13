@@ -1,4 +1,5 @@
-﻿using TvMaze.Core.DTO;
+﻿using TvMaze.Core.Constants;
+using TvMaze.Core.DTO;
 using TvMaze.Core.Entity;
 
 namespace TvMaze.Core.Mappers
@@ -13,7 +14,7 @@ namespace TvMaze.Core.Mappers
                 {
                     Id = cast.Id,
                     Name = cast.Name,
-                    Birthday = cast.Birthday.Date.ToString()
+                    Birthday = cast.Birthday?.ToString(FormatConstants.DateFormat).Replace("/", "-")
                 }
                 :
                 null;
